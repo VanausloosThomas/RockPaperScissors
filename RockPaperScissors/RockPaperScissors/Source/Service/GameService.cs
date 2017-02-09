@@ -9,15 +9,18 @@ namespace RockPaperScissors.Source.Service
 {
     class GameService : IGameservice
     {
-        private PlayerFactory playerFactory = new PlayerFactory();
+        private HandFactory handFactory = new HandFactory();
+        private GameFactory gameFactory = new GameFactory();
+        private IGame currentGame;
 
-        public MatchResult SinglePlayerGame(Hand hand)
+        public void InitialiseSinglePlayerGame()
         {
-            var humanPlayer = playerFactory.CreateNewHumanPlayer(hand);
-            var computerPlayer = playerFactory.CreateComputerPlayer();
+            currentGame = gameFactory.InitialiseSinglePlayerame();
+        }
 
-           return humanPlayer.DeterminWinner(computerPlayer);
-           
+        public MatchResult PlayGame(Hand hand)
+        {
+            return currentGame.PlayGame(handFactory.ConvertHand(hand));
         }
     }
 }

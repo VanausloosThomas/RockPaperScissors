@@ -9,15 +9,14 @@ namespace RockPaperScissors.Source.Service
 {
     class PlayerFactory
     {
-        private HandFactory handFactory = new HandFactory();
 
-        public Player CreateNewHumanPlayer(Hand hand)
+        public HumanPlayer CreateNewHumanPlayer()
         {
 
-            return new HumanPlayer(handFactory.ConvertHand(hand));
+            return new HumanPlayer();
         }
 
-        internal Player CreateComputerPlayer()
+        internal ComputerPlayer CreateComputerPlayer()
         {
             var computerPlayer = new ComputerPlayer();
             computerPlayer.GenerateHand();

@@ -65,11 +65,14 @@
     <Compile Include="Source\Domain\Hands\HandFactory.cs" />
     <Compile Include="Source\Domain\Hands\Ihand.cs" />
     <Compile Include="Source\Domain\ComputerPlayer.cs" />
+    <Compile Include="Source\Service\GameFactory.cs" />
+    <Compile Include="Source\Service\IGame.cs" />
     <Compile Include="Source\Service\PlayerFactory.cs" />
     <Compile Include="Source\Service\GameService.cs" />
     <Compile Include="Source\Domain\Hands\Hand.cs" />
     <Compile Include="Source\Service\IGameservice.cs" />
     <Compile Include="Source\Domain\MatchResult.cs" />
+    <Compile Include="Source\Service\SinglePlayerGame.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

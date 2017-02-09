@@ -9,7 +9,8 @@ namespace RockPaperScissors.Source.Domain
 {
     class HumanPlayer : Player
     {
-        public HumanPlayer(Ihand hand)
+ 
+        public void PassHand(Ihand hand)
         {
             base.hand = hand;
         }
