@@ -9,6 +9,6 @@ namespace RockPaperScissors.Source.Service
 {
     interface IGameservice
     {
-        Winner SinglePlayerGame(Hand hand);
+        MatchResult SinglePlayerGame(Hand hand);
     }
 }

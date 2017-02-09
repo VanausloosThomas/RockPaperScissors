@@ -11,7 +11,7 @@ namespace RockPaperScissors.Source.Service
     {
         private PlayerFactory playerFactory = new PlayerFactory();
 
-        public Winner SinglePlayerGame(Hand hand)
+        public MatchResult SinglePlayerGame(Hand hand)
         {
             var humanPlayer = playerFactory.CreateNewHumanPlayer(hand);
             var computerPlayer = playerFactory.CreateComputerPlayer();
