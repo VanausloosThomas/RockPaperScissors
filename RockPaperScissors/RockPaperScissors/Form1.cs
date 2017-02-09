@@ -75,7 +75,7 @@ namespace RockPaperScissors {
             } else if (button == ChoiceScissors)
             {
                 buttonPlayersChoice.Text = ChoiceScissors.Text;
-                return Hand.Scissor;
+                return Hand.Scissors;
             }
             buttonPlayersChoice.Text = ChoiceRock.Text;
             return Hand.Rock;

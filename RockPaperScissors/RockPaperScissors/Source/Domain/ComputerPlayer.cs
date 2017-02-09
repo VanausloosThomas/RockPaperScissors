@@ -9,7 +9,7 @@ namespace RockPaperScissors.Source.Domain
     {
         List<Ihand> hands = new List<Ihand>()
         {
-            new Scissor(),
+            new Scissors(),
             new Rock(),
             new Domain.Hands.Paper()
         };

@@ -19,7 +19,7 @@ namespace RockPaperScissors.Source.Service
             {
                 return new Rock();
             }
-            return new Scissor();
+            return new Scissors();
         }
     }
 }
