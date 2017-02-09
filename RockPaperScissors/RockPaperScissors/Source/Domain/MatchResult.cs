@@ -5,16 +5,17 @@ namespace RockPaperScissors.Source.Domain
 {
     public class MatchResult
     {
-        private Player winner, loser;
+        private Player player1, otherPlayer, winner;
         public bool Draw { get; }
 
-        public MatchResult(Player winner, Player loser)
+        public MatchResult(Player player1, Player otherPlayer,Player winner)
         {
             this.winner = winner;
-            this.loser = loser;
+            this.player1 = player1;
+            this.otherPlayer = otherPlayer;
         }
 
-        public MatchResult(Player winner, Player loser, bool draw) : this(winner, loser)
+        public MatchResult(Player player1, Player otherPlayer, bool draw) : this(player1, otherPlayer,null)
         {
             this.Draw = draw;
         }
@@ -29,14 +30,14 @@ namespace RockPaperScissors.Source.Domain
             return winner.hand.ToEnumValue();
         }
 
-        public string LoserName()
+        public string Player1Name()
         {
-            return loser.Name();
+            return player1.Name();
         }
 
-        public Hand LoserHand()
+        public Hand OtherPlayerHand()
         {
-            return loser.hand.ToEnumValue();
+            return otherPlayer.hand.ToEnumValue();
         }
     }
 }
