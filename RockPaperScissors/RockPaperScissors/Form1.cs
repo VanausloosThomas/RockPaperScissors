@@ -48,29 +48,35 @@ namespace RockPaperScissors {
             DefaultStartUp();
         }
 
-        internal void CheckWinner(ref Button button) {
-            MatchResult matchResult;
+        internal void CheckWinner(ref Button button)
+        {
+            var matchResult = gameService.SinglePlayerGame(DetermineHandChoice(button));
 
-            if (button == ChoiceRock) {
-                buttonPlayersChoice.Text = ChoiceRock.Text;
-                matchResult = gameService.SinglePlayerGame(Hand.Rock);
-            } else if (button == ChoicePaper) {
-                buttonPlayersChoice.Text = ChoicePaper.Text;
-                matchResult = gameService.SinglePlayerGame(Hand.Paper);
-            } else {
-                buttonPlayersChoice.Text = ChoiceScissors.Text;
-                matchResult = gameService.SinglePlayerGame(Hand.Scissor);
-
-            }
-
-            if (!matchResult.Draw) {
-
+            if (!matchResult.Draw)
+            {
                 MessageBox.Show("The winner is: " + matchResult.WinnerName() + "\n" + matchResult.LoserName() + " has lost, try again!", "Game won!");
-            } else {
+            } else
+            {
                 MessageBox.Show("Draw! Try again!", "Draw!");
             }
 
         }
+
+        private Hand DetermineHandChoice(Button button)
+        {
+            if (button == ChoicePaper)
+            {
+                buttonPlayersChoice.Text = ChoicePaper.Text;
+                return Hand.Paper;
+            } else if (button == ChoiceScissors)
+            {
+                buttonPlayersChoice.Text = ChoiceScissors.Text;
+                return Hand.Scissor;
+            }
+            
+            return Hand.Rock;
+        }
+
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show("Made by team (at least) one bridge to far ...\nSeppe, Steven, Thomas & Xan\nVersion 0.1", "About");
