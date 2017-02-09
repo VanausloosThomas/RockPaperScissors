@@ -18,7 +18,7 @@ namespace RockPaperScissors.Source.Domain.Hands
 
         public bool WinsFrom(Ihand ihand)
         {
-            return ihand is Scissor;
+            return ihand is Scissors;
         }
 
         public bool IsDraw(Ihand hand)

@@ -7,11 +7,11 @@ using RockPaperScissors.Source.Service;
 
 namespace RockPaperScissors.Source.Domain.Hands
 {
-    class Scissor : Ihand
+    class Scissors : Ihand
     {
         public Hand ToEnumValue()
         {
-            return Hand.Scissor;
+            return Hand.Scissors;
         }
 
         public bool WinsFrom(Ihand ihand)
@@ -21,7 +21,7 @@ namespace RockPaperScissors.Source.Domain.Hands
 
         public bool IsDraw(Ihand hand)
         {
-            return hand is Scissor;
+            return hand is Scissors;
         }
     }
 }
