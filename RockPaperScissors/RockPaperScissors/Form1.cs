@@ -13,5 +13,30 @@ namespace RockPaperScissors {
         public Form1() {
             InitializeComponent();
         }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e) {
+            //StartGame();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
+        private String button_click(object sender, EventArgs e) {
+            ChoicePaper.Enabled = false;
+            ChoiceRock.Enabled = false;
+            ChoiceScissors.Enabled = false;
+            String ChoicePlayer = "";
+
+            Button button = (Button)sender;
+
+            if (button == ChoiceRock) {
+                ChoicePlayer = ChoiceRock.Text;
+            } else if (button == ChoicePaper) {
+                ChoicePlayer = ChoicePaper.Text;
+            } else if (button == ChoiceScissors) {
+                ChoicePlayer = ChoiceScissors.Text;
+            } return ChoicePlayer;
+        }
     }
 }
