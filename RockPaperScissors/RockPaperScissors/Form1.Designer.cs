@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissors {
+﻿namespace RockPaperScissors{
     partial class Form1 {
         /// <summary>
         /// Required designer variable.

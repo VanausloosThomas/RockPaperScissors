@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RockPaperScissors.Properties {
+namespace Paper.Properties {
 
 
     /// <summary>
