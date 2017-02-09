@@ -36,12 +36,17 @@
             this.buttonComputersChoice = new System.Windows.Forms.Button();
             this.text_player = new System.Windows.Forms.Label();
             this.text_computer = new System.Windows.Forms.Label();
-            this.multiplayerµ = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonPlayersChoice = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.score_otherplayer = new System.Windows.Forms.Label();
+            this.score_player = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.count_draws = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,15 +75,15 @@
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newGameToolStripMenuItem.Text = "New game";
-            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.newGameToolStripMenuItem.Text = "New game - Singleplayer";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newSinglePlayerGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -93,7 +98,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -164,15 +169,6 @@
             this.text_computer.Text = "Computer";
             this.text_computer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // multiplayerµ
-            // 
-            this.multiplayerµ.Location = new System.Drawing.Point(12, 202);
-            this.multiplayerµ.Name = "multiplayerµ";
-            this.multiplayerµ.Size = new System.Drawing.Size(80, 56);
-            this.multiplayerµ.TabIndex = 8;
-            this.multiplayerµ.Text = "Go multiplayer";
-            this.multiplayerµ.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Enabled = false;
@@ -228,17 +224,79 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Score:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(290, 357);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Score:";
+            // 
+            // score_otherplayer
+            // 
+            this.score_otherplayer.AutoSize = true;
+            this.score_otherplayer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_otherplayer.Location = new System.Drawing.Point(73, 89);
+            this.score_otherplayer.Name = "score_otherplayer";
+            this.score_otherplayer.Size = new System.Drawing.Size(0, 18);
+            this.score_otherplayer.TabIndex = 17;
+            // 
+            // score_player
+            // 
+            this.score_player.AutoSize = true;
+            this.score_player.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_player.Location = new System.Drawing.Point(340, 357);
+            this.score_player.Name = "score_player";
+            this.score_player.Size = new System.Drawing.Size(0, 18);
+            this.score_player.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 214);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 18);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Draws:";
+            // 
+            // count_draws
+            // 
+            this.count_draws.AutoSize = true;
+            this.count_draws.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.count_draws.Location = new System.Drawing.Point(73, 214);
+            this.count_draws.Name = "count_draws";
+            this.count_draws.Size = new System.Drawing.Size(0, 18);
+            this.count_draws.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 441);
+            this.Controls.Add(this.count_draws);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.score_player);
+            this.Controls.Add(this.score_otherplayer);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonPlayersChoice);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.multiplayerµ);
             this.Controls.Add(this.text_computer);
             this.Controls.Add(this.text_player);
             this.Controls.Add(this.buttonComputersChoice);
@@ -275,12 +333,17 @@
         private System.Windows.Forms.Button buttonComputersChoice;
         private System.Windows.Forms.Label text_player;
         private System.Windows.Forms.Label text_computer;
-        private System.Windows.Forms.Button multiplayerµ;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonPlayersChoice;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label score_otherplayer;
+        private System.Windows.Forms.Label score_player;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label count_draws;
     }
 }
 
