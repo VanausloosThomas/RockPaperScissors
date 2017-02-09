@@ -12,7 +12,8 @@ using RockPaperScissors.Source.Domain;
 
 namespace RockPaperScissors {
 
-    public partial class Form1 : Form, IGameservice {
+    public partial class Form1 : Form{
+        private GameService gameService;
 
         public Form1() {
             InitializeComponent();
@@ -37,22 +38,15 @@ namespace RockPaperScissors {
             ChoicePaper.Enabled = false;
             ChoiceRock.Enabled = false;
             ChoiceScissors.Enabled = false;
-            String ChoicePlayer = "";
 
             ComputerMakesMove();
 
             Button button = (Button)sender;
 
-            if (button == ChoiceRock) {
-                ChoicePlayer = ChoiceRock.Text;
-                buttonPlayersChoice.Text = ChoiceRock.Text;
-            } else if (button == ChoicePaper) {
-                ChoicePlayer = ChoicePaper.Text;
-                buttonPlayersChoice.Text = ChoicePaper.Text;
-            } else if (button == ChoiceScissors) {
-                ChoicePlayer = ChoiceScissors.Text;
-                buttonPlayersChoice.Text = ChoiceScissors.Text;
-            } 
+            CheckWinner(ref button);
+
+
+
         }
 
         public void ComputerMakesMove() {
@@ -63,8 +57,17 @@ namespace RockPaperScissors {
             DefaultStartUp();
         }
 
-        private void CheckWinner() {
-            
+        internal void CheckWinner(ref Button button) {
+            if (button == ChoiceRock) {
+                buttonPlayersChoice.Text = ChoiceRock.Text;
+                gameService.SinglePlayerGame(Hand.Rock);
+            } else if (button == ChoicePaper) {
+                buttonPlayersChoice.Text = ChoicePaper.Text;
+                gameService.SinglePlayerGame(Hand.Paper);
+            } else if (button == ChoiceScissors) {
+                buttonPlayersChoice.Text = ChoiceScissors.Text;
+                gameService.SinglePlayerGame(Hand.Siccor);
+            }
         }
 
         public Winner SinglePlayerGame(Hand hand) {
