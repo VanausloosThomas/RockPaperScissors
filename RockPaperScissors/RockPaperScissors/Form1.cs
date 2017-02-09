@@ -12,8 +12,8 @@ using RockPaperScissors.Source.Domain;
 
 namespace RockPaperScissors {
 
-    public partial class Form1 : Form{
-        private GameService gameService;
+    public partial class Form1 : Form {
+        private GameService gameService = new GameService();
 
         public Form1() {
             InitializeComponent();
@@ -39,18 +39,9 @@ namespace RockPaperScissors {
             ChoiceRock.Enabled = false;
             ChoiceScissors.Enabled = false;
 
-            ComputerMakesMove();
-
             Button button = (Button)sender;
 
             CheckWinner(ref button);
-
-
-
-        }
-
-        public void ComputerMakesMove() {
-            
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -58,24 +49,35 @@ namespace RockPaperScissors {
         }
 
         internal void CheckWinner(ref Button button) {
+            MatchResult matchResult;
+
             if (button == ChoiceRock) {
                 buttonPlayersChoice.Text = ChoiceRock.Text;
-                gameService.SinglePlayerGame(Hand.Rock);
+                matchResult = gameService.SinglePlayerGame(Hand.Rock);
             } else if (button == ChoicePaper) {
                 buttonPlayersChoice.Text = ChoicePaper.Text;
-                gameService.SinglePlayerGame(Hand.Paper);
-            } else if (button == ChoiceScissors) {
+                matchResult = gameService.SinglePlayerGame(Hand.Paper);
+            } else {
                 buttonPlayersChoice.Text = ChoiceScissors.Text;
-                gameService.SinglePlayerGame(Hand.Siccor);
-            }
-        }
+                matchResult = gameService.SinglePlayerGame(Hand.Scissor);
 
-        public Winner SinglePlayerGame(Hand hand) {
-            throw new NotImplementedException();
+            }
+
+            if (!matchResult.Draw) {
+
+                MessageBox.Show("The winner is: " + matchResult.WinnerName() + "\n" + matchResult.LoserName() + " has lost, try again!", "Game won!");
+            } else {
+                MessageBox.Show("Draw! Try again!", "Draw!");
+            }
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             MessageBox.Show("Made by team (at least) one bridge to far ...\nSeppe, Steven, Thomas & Xan\nVersion 0.1", "About");
+        }
+
+        private void buttonComputersChoice_Click(object sender, EventArgs e) {
+
         }
     }
 }

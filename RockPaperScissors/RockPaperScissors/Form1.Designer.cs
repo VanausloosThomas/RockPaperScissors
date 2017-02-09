@@ -23,8 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +42,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.buttonPlayersChoice = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.vs = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +69,7 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -80,7 +77,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -101,7 +98,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -147,6 +144,7 @@
             this.buttonComputersChoice.Size = new System.Drawing.Size(120, 80);
             this.buttonComputersChoice.TabIndex = 4;
             this.buttonComputersChoice.UseVisualStyleBackColor = true;
+            this.buttonComputersChoice.Click += new System.EventHandler(this.buttonComputersChoice_Click);
             // 
             // text_player
             // 
@@ -228,19 +226,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageKey = "(none)";
             this.label1.Location = new System.Drawing.Point(170, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 39);
             this.label1.TabIndex = 13;
             this.label1.Text = "VS";
-            // 
-            // vs
-            // 
-            this.vs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("vs.ImageStream")));
-            this.vs.TransparentColor = System.Drawing.Color.Black;
-            this.vs.Images.SetKeyName(0, "Vs.pn_.png");
             // 
             // Form1
             // 
@@ -293,7 +284,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonPlayersChoice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ImageList vs;
     }
 }
 
