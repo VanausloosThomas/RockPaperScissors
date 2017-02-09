@@ -26,7 +26,7 @@ namespace RockPaperScissors.Source.Domain
 
         public Hand WinnerHand()
         {
-            return Hand.Paper;
+            return winner.hand.ToEnumValue();
         }
 
         public string LoserName()
