@@ -14,6 +14,7 @@ namespace RockPaperScissors {
 
     public partial class Form1 : Form {
         private GameService gameService = new GameService();
+        private Player player;
 
         public Form1() {
             InitializeComponent();
@@ -21,11 +22,11 @@ namespace RockPaperScissors {
 
         private void newSinglePlayerGameToolStripMenuItem_Click(object sender, EventArgs e) {
             gameService.InitialiseSinglePlayerGame();
-
+            
             //overbodig? 
-            count_draws.Text = "0";
-            score_player.Text = "0";
-            score_otherplayer.Text = "0";
+            //count_draws.Text = "0";
+            //score_player.Text = "0";
+            //score_otherplayer.Text = "0";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -61,6 +62,7 @@ namespace RockPaperScissors {
         private void Form1_Load(object sender, EventArgs e) {
             DefaultStartUp();
             gameService.InitialiseSinglePlayerGame();
+
         }
 
         internal void CheckWinner(ref Button button) {
@@ -68,18 +70,19 @@ namespace RockPaperScissors {
             buttonComputersChoice.Text = matchResult.OtherPlayerHand().ToString();
 
             if (!matchResult.Draw) {
+                Counters();
                 MessageBox.Show(matchResult.WinnerName() + " won with " + matchResult.WinnerHand() + "!", matchResult.WinnerName() + " has won!");
             } else {
                 MessageBox.Show("Draw! Try again!", "Draw!");
             }
         }
 
-        /*private void Counters() {
-            count_draws.Text = matchResult.;
-            score_player.Text;
-            score_otherplayer.Text ;
-            
-        }*/
+        private void Counters() {
+            //count_draws.Text = 
+            score_player.Text = 
+            //score_otherplayer.Text = 
+
+        }
 
         private Hand DetermineHandChoice(Button button) {
             if (button == ChoicePaper) {
