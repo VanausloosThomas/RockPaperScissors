@@ -54,7 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Domain\Hands\IResultConstruction.cs" />
     <Compile Include="Source\Domain\Hands\Paper.cs" />
     <Compile Include="Source\Domain\Hands\Rock.cs" />
     <Compile Include="Source\Domain\Hands\Scissor.cs" />
