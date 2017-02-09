@@ -23,6 +23,8 @@ namespace RockPaperScissors {
             ChoicePaper.Enabled = true;
             ChoiceRock.Enabled = true;
             ChoiceScissors.Enabled = true;
+            buttonComputersChoice.Text = "";
+            buttonPlayersChoice.Text = "";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -41,6 +43,7 @@ namespace RockPaperScissors {
 
             Button button = (Button)sender;
 
+
             CheckWinner(ref button);
         }
 
@@ -51,17 +54,15 @@ namespace RockPaperScissors {
         internal void CheckWinner(ref Button button)
         {
             var matchResult = gameService.SinglePlayerGame(DetermineHandChoice(button));
-            var computerPlayer = gameService.SinglePlayerGame(DetermineHandChoice(button));
+            buttonComputersChoice.Text = matchResult.OtherPlayerHand().ToString();
 
             if (!matchResult.Draw)
             {
-                MessageBox.Show(matchResult.WinnerName() + " won with " + matchResult.WinnerHand() +"! \n\n" + matchResult.LoserName() + " has lost, try again!", matchResult.WinnerName() + " has won!");
+                MessageBox.Show(matchResult.WinnerName() + " won with " + matchResult.WinnerHand() +"!", matchResult.WinnerName() + " has won!");
             } else
             {
                 MessageBox.Show("Draw! Try again!", "Draw!");
             }
-
-            //buttonComputersChoice = computerPlayer.
 
         }
 
@@ -76,7 +77,7 @@ namespace RockPaperScissors {
                 buttonPlayersChoice.Text = ChoiceScissors.Text;
                 return Hand.Scissor;
             }
-            
+            buttonPlayersChoice.Text = ChoiceRock.Text;
             return Hand.Rock;
         }
 
@@ -86,7 +87,6 @@ namespace RockPaperScissors {
         }
 
         private void buttonComputersChoice_Click(object sender, EventArgs e) {
-           // buttonComputersChoice.Text = 
         }
     }
 }
