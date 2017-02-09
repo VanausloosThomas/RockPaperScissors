@@ -14,15 +14,14 @@ namespace RockPaperScissors {
 
     public partial class Form1 : Form {
         private GameService gameService = new GameService();
-        private Player player;
 
         public Form1() {
             InitializeComponent();
         }
 
         private void newSinglePlayerGameToolStripMenuItem_Click(object sender, EventArgs e) {
-            gameService.InitialiseSinglePlayerGame();
-            
+            InitializeSingePlayerGame();
+
             //overbodig? 
             //count_draws.Text = "0";
             //score_player.Text = "0";
@@ -31,6 +30,11 @@ namespace RockPaperScissors {
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
             Application.Exit();
+        }
+
+        private void InitializeSingePlayerGame() {
+            gameService.InitialiseSinglePlayerGame();
+            Counters(0,0);
         }
 
         public void DefaultStartUp() {
@@ -61,26 +65,25 @@ namespace RockPaperScissors {
 
         private void Form1_Load(object sender, EventArgs e) {
             DefaultStartUp();
-            gameService.InitialiseSinglePlayerGame();
-
+            InitializeSingePlayerGame();
         }
 
         internal void CheckWinner(ref Button button) {
             var matchResult = gameService.PlayGame(DetermineHandChoice(button));
             buttonComputersChoice.Text = matchResult.OtherPlayerHand().ToString();
+            Counters(matchResult.Player1GetScore(),matchResult.OtherPlayerGetScore());
 
             if (!matchResult.Draw) {
-                Counters();
                 MessageBox.Show(matchResult.WinnerName() + " won with " + matchResult.WinnerHand() + "!", matchResult.WinnerName() + " has won!");
             } else {
                 MessageBox.Show("Draw! Try again!", "Draw!");
             }
         }
 
-        private void Counters() {
-            //count_draws.Text = 
-            score_player.Text = 
-            //score_otherplayer.Text = 
+        private void Counters(int Player1Counter, int OtherPlayerCounter) {
+            //count_draws.Text = //need to implement
+            score_player.Text = Player1Counter.ToString();
+            score_otherplayer.Text = OtherPlayerCounter.ToString();
 
         }
 
