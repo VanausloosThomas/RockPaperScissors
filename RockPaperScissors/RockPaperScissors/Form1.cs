@@ -20,8 +20,9 @@ namespace RockPaperScissors {
         }
 
         private void newSinglePlayerGameToolStripMenuItem_Click(object sender, EventArgs e) {
-            ResetButtons();
+            gameService.InitialiseSinglePlayerGame();
 
+            //overbodig? 
             count_draws.Text = "0";
             score_player.Text = "0";
             score_otherplayer.Text = "0";
@@ -59,10 +60,11 @@ namespace RockPaperScissors {
 
         private void Form1_Load(object sender, EventArgs e) {
             DefaultStartUp();
+            gameService.InitialiseSinglePlayerGame();
         }
 
         internal void CheckWinner(ref Button button) {
-            var matchResult = gameService.SinglePlayerGame(DetermineHandChoice(button));
+            var matchResult = gameService.PlayGame(DetermineHandChoice(button));
             buttonComputersChoice.Text = matchResult.OtherPlayerHand().ToString();
 
             if (!matchResult.Draw) {
