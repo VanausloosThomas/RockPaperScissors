@@ -54,7 +54,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Service\Hand.cs" />
+    <Compile Include="Source\Domain\Hands\Paper.cs" />
+    <Compile Include="Source\Domain\Hands\Rock.cs" />
+    <Compile Include="Source\Domain\Hands\Scissor.cs" />
+    <Compile Include="Source\Domain\HumanPlayer.cs" />
+    <Compile Include="Source\Domain\Player.cs" />
+    <Compile Include="Source\Domain\Hands\HandFactory.cs" />
+    <Compile Include="Source\Domain\Hands\Ihand.cs" />
+    <Compile Include="Source\Service\PlayerFactory.cs" />
+    <Compile Include="Source\Service\GameService.cs" />
+    <Compile Include="Source\Domain\Hands\Hand.cs" />
     <Compile Include="Source\Service\IGameservice.cs" />
     <Compile Include="Source\Domain\Winner.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
