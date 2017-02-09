@@ -10,6 +10,7 @@ namespace RockPaperScissors.Source.Domain
     public abstract class Player
     {
         public Ihand hand { get; protected set; }
+        public int scoreCounter { get; private set; }
 
         public abstract string Name();
 
@@ -17,14 +18,20 @@ namespace RockPaperScissors.Source.Domain
         {
             if (hand.WinsFrom(player.hand))
             {
-                return new MatchResult(this, player,this);
+                this.AddWin();
+                return new MatchResult(this, player, this);
             }
             if (hand.IsDraw(player.hand))
             {
                 return new MatchResult(this, player, true);
             }
+            player.AddWin();
+            return new MatchResult(this, player, player);
+        }
 
-            return new MatchResult(this, player, player);    
+        private void AddWin()
+        {
+            this.scoreCounter ++;
         }
     }
 }
