@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,8 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.newGameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameToolStripMenuItem.Text = "New game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -77,7 +79,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -162,11 +164,11 @@
             this.text_computer.AutoSize = true;
             this.text_computer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_computer.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.text_computer.Location = new System.Drawing.Point(145, 93);
+            this.text_computer.Location = new System.Drawing.Point(167, 93);
             this.text_computer.Name = "text_computer";
-            this.text_computer.Size = new System.Drawing.Size(119, 17);
+            this.text_computer.Size = new System.Drawing.Size(64, 17);
             this.text_computer.TabIndex = 6;
-            this.text_computer.Text = "COMPUTER OF MP";
+            this.text_computer.Text = "computer";
             this.text_computer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // multiplayerµ
@@ -227,7 +229,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageKey = "(none)";
-            this.label1.Location = new System.Drawing.Point(170, 203);
+            this.label1.Location = new System.Drawing.Point(173, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 39);
             this.label1.TabIndex = 13;
@@ -251,6 +253,7 @@
             this.Controls.Add(this.ChoicePaper);
             this.Controls.Add(this.ChoiceRock);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";

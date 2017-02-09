@@ -51,14 +51,17 @@ namespace RockPaperScissors {
         internal void CheckWinner(ref Button button)
         {
             var matchResult = gameService.SinglePlayerGame(DetermineHandChoice(button));
+            var computerPlayer = gameService.SinglePlayerGame(DetermineHandChoice(button));
 
             if (!matchResult.Draw)
             {
-                MessageBox.Show("The winner is: " + matchResult.WinnerName() + "\n" + matchResult.LoserName() + " has lost, try again!", "Game won!");
+                MessageBox.Show(matchResult.WinnerName() + " won with " + matchResult.WinnerHand() +"! \n\n" + matchResult.LoserName() + " has lost, try again!", matchResult.WinnerName() + " has won!");
             } else
             {
                 MessageBox.Show("Draw! Try again!", "Draw!");
             }
+
+            //buttonComputersChoice = computerPlayer.
 
         }
 
@@ -83,7 +86,7 @@ namespace RockPaperScissors {
         }
 
         private void buttonComputersChoice_Click(object sender, EventArgs e) {
-            buttonComputersChoice.Text = 
+           // buttonComputersChoice.Text = 
         }
     }
 }
