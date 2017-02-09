@@ -77,7 +77,7 @@ namespace RockPaperScissors {
         }
 
         private void buttonComputersChoice_Click(object sender, EventArgs e) {
-
+            buttonComputersChoice.Text = 
         }
     }
 }
