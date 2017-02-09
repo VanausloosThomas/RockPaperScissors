@@ -17,14 +17,14 @@ namespace RockPaperScissors.Source.Domain
         {
             if (hand.WinsFrom(player.hand))
             {
-                return new MatchResult(this, player);
+                return new MatchResult(this, player,this);
             }
             if (hand.IsDraw(player.hand))
             {
                 return new MatchResult(this, player, true);
             }
 
-            return new MatchResult(player, this);    
+            return new MatchResult(this, player, player);    
         }
     }
 }
