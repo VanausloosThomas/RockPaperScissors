@@ -48,5 +48,13 @@ namespace RockPaperScissors.Source.Domain
         {
             return otherPlayer.hand.ToEnumValue();
         }
+        public int Player1GetScore()
+        {
+            return player1.scoreCounter;
+        }
+        public int OtherPlayerGetScore()
+        {
+            return otherPlayer.scoreCounter;
+        }
     }
 }
