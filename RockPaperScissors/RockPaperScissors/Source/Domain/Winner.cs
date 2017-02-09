@@ -1,6 +1,11 @@
-﻿namespace RockPaperScissors.Source.Service
+﻿namespace RockPaperScissors.Source.Domain
+
 {
     public class Winner
     {
+        public string Name()
+        {
+            return "computer";
+        }
     }
 }
