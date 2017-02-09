@@ -9,16 +9,22 @@ namespace RockPaperScissors.Source.Domain
 {
     public abstract class Player
     {
-        protected abstract Ihand GetHand();
+        public Ihand hand { get; protected set; }
 
-        internal Winner DeterminWinner(Player player)
+        public abstract string Name();
+
+        internal MatchResult DeterminWinner(Player player)
         {
-            if (GetHand().WinsFrom(player.GetHand()))
+            if (hand.WinsFrom(player.hand))
             {
-                return new Winner(this);
+                return new MatchResult(this, player);
+            }
+            if (hand.IsDraw(player.hand))
+            {
+                return new MatchResult(this, player, true);
             }
 
-            return new Winner(player);    
+            return new MatchResult(player, this);    
         }
     }
 }

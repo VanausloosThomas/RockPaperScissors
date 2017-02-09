@@ -19,7 +19,9 @@ namespace RockPaperScissors.Source.Service
 
         internal Player CreateComputerPlayer()
         {
-            throw new NotImplementedException();
+            var computerPlayer = new ComputerPlayer();
+            computerPlayer.GenerateHand();
+            return computerPlayer;
         }
     }
 }

@@ -9,16 +9,14 @@ namespace RockPaperScissors.Source.Domain
 {
     class HumanPlayer : Player
     {
-        private Ihand hand;
-
         public HumanPlayer(Ihand hand)
         {
-            this.hand = hand;
+            base.hand = hand;
         }
 
-        protected override Ihand GetHand()
+        public override string Name()
         {
-            return hand;
+            return "Player 1";
         }
     }
 }
