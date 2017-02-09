@@ -35,6 +35,15 @@ namespace RockPaperScissors.Source.Domain
             return player1.Name();
         }
 
+        public Hand Player1Hand()
+        {
+            return player1.hand.ToEnumValue();
+        }
+        public string OtherPlayerName()
+        {
+            return otherPlayer.Name();
+        }
+
         public Hand OtherPlayerHand()
         {
             return otherPlayer.hand.ToEnumValue();
