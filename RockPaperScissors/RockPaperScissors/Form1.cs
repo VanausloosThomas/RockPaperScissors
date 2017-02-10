@@ -21,11 +21,6 @@ namespace RockPaperScissors {
 
         private void newSinglePlayerGameToolStripMenuItem_Click(object sender, EventArgs e) {
             InitializeSingePlayerGame();
-
-            //overbodig? 
-            //count_draws.Text = "0";
-            //score_player.Text = "0";
-            //score_otherplayer.Text = "0";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
